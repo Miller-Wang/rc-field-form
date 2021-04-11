@@ -1,17 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import Form, { Field } from 'rc-field-form';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Form
+    initialValues={{ username: '', password: '' }}
+    onFinish={(values) => {
+      console.log(values);
+    }}
+  >
+    <Field name="username">
+      <input placeholder="用户名" />
+    </Field>
+    <Field name="password">
+      <input placeholder="密码" />
+    </Field>
+    <button>提交</button>
+  </Form>,
   document.getElementById('root')
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
