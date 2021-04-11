@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import FieldContext from './FieldContext';
 import useForm from './useForm';
 /**
@@ -8,11 +8,18 @@ import useForm from './useForm';
  * onFinish 完成回调
  * @returns
  */
-const Form = ({ initialValues, onFinish, children }) => {
+const Form = ({ initialValues, onFinish, onFinishFailed, children }) => {
   let [formInstance] = useForm();
   formInstance.setCallbacks({
     onFinish,
+    onFinishFailed,
   });
+  console.log('渲染 form');
+  const mountRef = useRef(null);
+  if (!mountRef.current) {
+    initialValues && formInstance.setInitialValues(initialValues);
+    mountRef.current = true;
+  }
   return (
     <form
       onSubmit={(event) => {
