@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Form, { Field } from 'rc-field-form';
+// import Form, { Field } from 'rc-field-form';
+import Form, { Field } from './rc-field-form';
 
 ReactDOM.render(
   <Form
