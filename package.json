@@ -9,12 +9,14 @@
     "async-validator": "^3.5.1",
     "babel-plugin-import": "^1.13.3",
     "customize-cra": "^1.0.0",
+    "dragon-ui": "^1.0.0-alpha.30",
     "rc-field-form": "^1.20.0",
     "react": "^17.0.2",
     "react-app-rewired": "^2.1.8",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
-    "web-vitals": "^1.0.1"
+    "web-vitals": "^1.0.1",
+    "zarm": "^2.8.1"
   },
   "scripts": {
     "start": "react-scripts start",
